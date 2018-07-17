@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.androidquery.AQuery;
 import com.balysv.materialripple.MaterialRippleLayout;
 import com.bumptech.glide.Glide;
 
@@ -49,6 +50,7 @@ import com.mayurit.hakahaki.NEEFEJDetail;
 import com.mayurit.hakahaki.ProjectDetail;
 
 import com.mayurit.hakahaki.R;
+import com.mayurit.hakahaki.Seek;
 import com.mayurit.hakahaki.VideoDetail;
 
 import java.io.Serializable;
@@ -121,6 +123,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
     String toolbartitle;
 
+    AQuery aQuery;
+
     public FragmentHome() {
         // Required empty public constructor
     }
@@ -148,6 +152,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         setHasOptionsMenu(true);
         toolbarTitle = getString(R.string.app_name);
         view = inflater.inflate(R.layout.fragment_home, null);
+        aQuery=new AQuery(getActivity());
 
         category_id = 34;
         databaseHelper = new DatabaseHelper(context);
@@ -467,10 +472,10 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         mainNews3_date.setText(list.get(2).getPostDate());
         mainNews4_date.setText(list.get(3).getPostDate());
 
-        Glide.with(getActivity().getApplicationContext()).load(list.get(0).getImageId()).into(mainNews1_image);
-        Glide.with(getActivity().getApplicationContext()).load(list.get(1).getImageId()).into(mainNews2_image);
-        Glide.with(getActivity().getApplicationContext()).load(list.get(2).getImageId()).into(mainNews3_image);
-        Glide.with(getActivity().getApplicationContext()).load(list.get(3).getImageId()).into(mainNews4_image);
+        aQuery.id(mainNews1_image).image(list.get(0).getImageId(),true,true);
+        aQuery.id(mainNews2_image).image(list.get(1).getImageId(),true,true);
+        aQuery.id(mainNews3_image).image(list.get(2).getImageId(),true,true);
+        aQuery.id(mainNews4_image).image(list.get(3).getImageId(),true,true);
 
         main_news1.setOnClickListener(this);
         main_news2.setOnClickListener(this);
@@ -489,9 +494,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         ent_date2.setText(list1.get(1).getPostDate());
         ent_date3.setText(list1.get(2).getPostDate());
 
-        Glide.with(getActivity().getApplicationContext()).load(list1.get(0).getImageId()).into(ent_img1);
-        Glide.with(getActivity().getApplicationContext()).load(list1.get(1).getImageId()).into(ent_img2);
-        Glide.with(getActivity().getApplicationContext()).load(list1.get(2).getImageId()).into(ent_img3);
+        aQuery.id(ent_img1).image(list1.get(0).getImageId(),true,true);
+        aQuery.id(ent_img2).image(list1.get(1).getImageId(),true,true);
+        aQuery.id(ent_img3).image(list1.get(2).getImageId(),true,true);
 
         main_news_a1.setOnClickListener(this);
         main_news_a2.setOnClickListener(this);
@@ -509,9 +514,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         report_date2.setText(list2.get(1).getPostDate());
         report_date3.setText(list2.get(2).getPostDate());
 
-        Glide.with(getActivity().getApplicationContext()).load(list2.get(0).getImageId()).into(report_img1);
-        Glide.with(getActivity().getApplicationContext()).load(list2.get(1).getImageId()).into(report_img2);
-        Glide.with(getActivity().getApplicationContext()).load(list2.get(2).getImageId()).into(report_img3);
+        aQuery.id(report_img1).image(list2.get(0).getImageId(),true,true);
+        aQuery.id(report_img2).image(list2.get(1).getImageId(),true,true);
+        aQuery.id(report_img3).image(list2.get(2).getImageId(),true,true);
 
         main_news_b1.setOnClickListener(this);
         main_news_b2.setOnClickListener(this);
@@ -655,6 +660,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), Seek.class);
+            startActivity(intent);
             return true;
         }
 

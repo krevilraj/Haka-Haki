@@ -38,6 +38,7 @@ import com.mayurit.hakahaki.Model.NewsListModel;
 import com.mayurit.hakahaki.NEEFEJDetail;
 import com.mayurit.hakahaki.ProjectDetail;
 import com.mayurit.hakahaki.R;
+import com.mayurit.hakahaki.Seek;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -136,6 +137,8 @@ public class FragmentNEFEJ extends Fragment implements View.OnClickListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), Seek.class);
+            startActivity(intent);
             return true;
         }
 

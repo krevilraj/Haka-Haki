@@ -74,7 +74,7 @@ public class FragmentFeedback extends Fragment implements View.OnClickListener {
 
     @Override
     public void onResume() {
-        toolbarTitle = (String) getResources().getText(R.string.video);
+        toolbarTitle = (String) getResources().getText(R.string.feedback);
         getActivity().setTitle(toolbarTitle);
         super.onResume();
     }

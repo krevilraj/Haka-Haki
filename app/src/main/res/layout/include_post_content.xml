@@ -80,11 +80,10 @@
 
 
                 <ImageView
-android:id="@+id/like"
+                    android:id="@+id/like"
                     android:layout_width="@dimen/spacing_mxlarge"
                     android:layout_height="@dimen/spacing_mxlarge"
-                    android:layout_marginLeft="@dimen/spacing_medium"
-                    android:layout_marginRight="@dimen/spacing_small"
+                    android:layout_marginLeft="@dimen/spacing_large"
                     android:tint="@color/grey_hard"
                     app:srcCompat="@drawable/thumb_up" />
             </LinearLayout>
@@ -99,10 +98,11 @@ android:id="@+id/like"
             android:id="@+id/txt_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_large"
             android:paddingLeft="@dimen/spacing_large"
             android:paddingRight="@dimen/spacing_large"
-            android:text="..."
+            android:text="this is a man in the thej aou aotun this is a man in the thej aou aotun soenps fgnn"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/overlay_dark"
             android:textStyle="bold" />
@@ -111,7 +111,6 @@ android:id="@+id/like"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_marginBottom="6dp"
-            android:layout_marginTop="6dp"
             android:background="@color/grey_bg" />
 
         <LinearLayout
@@ -119,6 +118,8 @@ android:id="@+id/like"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:orientation="horizontal"
+            android:paddingBottom="@dimen/spacing_medium"
+            android:paddingTop="@dimen/spacing_medium"
             android:weightSum="3">
 
             <LinearLayout
@@ -149,7 +150,8 @@ android:id="@+id/like"
                         android:textColor="#000000"
                         android:textSize="14sp" />
 
-                    <TextView android:id="@+id/date"
+                    <TextView
+                        android:id="@+id/date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="..."
@@ -165,12 +167,14 @@ android:id="@+id/like"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
-
+                android:layout_marginRight="15dp"
                 android:layout_weight="1"
+
+                android:gravity="right"
                 android:orientation="horizontal">
 
                 <ImageView
-android:id="@+id/ic_fb"
+                    android:id="@+id/ic_fb"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
@@ -196,7 +200,6 @@ android:id="@+id/ic_fb"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_marginBottom="6dp"
-            android:layout_marginTop="6dp"
             android:background="@color/grey_bg" />
 
 
@@ -208,7 +211,6 @@ android:id="@+id/ic_fb"
             android:paddingLeft="@dimen/spacing_large"
             android:paddingRight="@dimen/spacing_large"
             android:text="..."
-
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/overlay_dark" />
 

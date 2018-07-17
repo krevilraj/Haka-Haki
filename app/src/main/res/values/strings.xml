@@ -5,18 +5,27 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Setting</string>
+    <string name="action_settings">सेटिङ</string>
     <string name="nefej">नेफेज</string>
     <string name="project">परियाेजना</string>
     <string name="video">भिडियाे</string>
     <string name="audio">अडियाे</string>
     <string name="notice">सूचना</string>
     <string name="document">दस्ताबेज</string>
-    <string name="category">समाचार </string>
+    <string name="category">समाचार</string>
     <string name="paani">पानी</string>
-    <string name="rate_us">Rate Us</string>
-    <string name="home">Home</string>
-    <string name="members">members</string>
+    <string name="rate_us">मूल्याङ्कन गर्नुहोस्</string>
+    <string name="home">मुख्यपृष्ठ</string>
+    <string name="members">सादस्य</string>
+    <string name="facebook">फेसबुक</string>
+    <string name="setting">सेटिङ</string>
+
+
+
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -110,21 +119,26 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="no_category">There is no category available right now.</string>
-    <string name="failed_text">Sorry something went wrong Please Try again Later</string>
-    <string name="no_internet_text">No Internet Connection Available</string>
-    <string name="retry_txt">Retry</string>
-    <string name="app_name_nepali">Haka Haki</string>
+    <string name="no_category">अहिले कुनै समाचार उपलब्ध छैन।</string>
+    <string name="failed_text">क्षमा गर्नुहोस् पुन: प्रयास गर्नुहोस्</string>
+    <string name="no_internet_text">कुनै ईन्टरनेट सेवा जोडिएको छैन</string>
+    <string name="retry_txt">पुन: प्रयास गर्नुहोस्</string>
 
-    <string name="player_error">player_error</string>
-    <string name="rules_regulations"><![CDATA[Rules & Regulations]]></string>
+    <string name="player_error">संचालन त्रुटी</string>
+    <string name="rules_regulations">ऐन नियम</string>
     <string name="pani">पानी</string>
-    <string name="ankhijhyal">Ankhijhyal</string>
-    <string name="naya_pusta">Naya Pusta</string>
-    <string name="documentary">Documentary</string>
-    <string name="sp_project">SP project</string>
-    <string name="crtn_project">CRTN Project</string>
-    <string name="feedback">Feedback</string>
+    <string name="ankhijhyal">आँखीझ्याल</string>
+    <string name="naya_pusta">नयाँ पुस्ता</string>
+    <string name="documentary">डकुमेन्ट्री</string>
+    <string name="sp_project">स.प.परियोजना</string>
+    <string name="crtn_project">सिरतिन परियोजना</string>
+    <string name="feedback">प्रतिक्रिया</string>
+    <string name="board_member">बोर्ड मेम्बर</string>
+    <string name="member">कर्मचारी</string>
+    <string name="about">हाम्रो बारेमा</string>
+    <string name="watershed_health_report">जलाधार अध्ययन प्रतिवेदन</string>
+    <string name="research_report">खोजमुलक प्रतिवेदन</string>
     <string name="action_refresh">Refresh</string>
+
 
 </resources>

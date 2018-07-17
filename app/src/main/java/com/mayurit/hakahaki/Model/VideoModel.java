@@ -21,6 +21,9 @@ public class VideoModel implements Serializable {
     @SerializedName("post_content")
     @Expose
     private String post_content;
+    @SerializedName("post_url")
+    @Expose
+    private String post_url;
 
     public String getYoutube_id() {
         return youtube_id;
@@ -75,6 +78,14 @@ public class VideoModel implements Serializable {
 
     public void setPostContent(String post_content) {
         this.post_content = post_content;
+    }
+
+    public String getPost_url() {
+        return post_url;
+    }
+
+    public void setPost_url(String post_url) {
+        this.post_url = post_url;
     }
 
     public String getImageId() {

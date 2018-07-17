@@ -37,7 +37,7 @@
                 android:layout_centerVertical="true"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Project"
+                android:text="@string/project"
                 android:textColor="#0b0b0b"
                 android:textSize="18sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_centerVertical="true"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Board Members"
+                android:text="@string/board_member"
                 android:textColor="#0b0b0b"
                 android:textSize="18sp" />
 
@@ -127,7 +127,7 @@
                 android:layout_centerVertical="true"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Employee"
+                android:text="@string/member"
                 android:textColor="#0b0b0b"
                 android:textSize="18sp" />
 
@@ -173,7 +173,7 @@
                 android:layout_centerVertical="true"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="About"
+                android:text="@string/about"
                 android:textColor="#0b0b0b"
                 android:textSize="18sp" />
 

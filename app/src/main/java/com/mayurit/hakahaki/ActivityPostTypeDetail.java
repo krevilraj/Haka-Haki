@@ -39,10 +39,10 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
 
     int page_no;
     RelativeLayout rel_container;
-    String post_id,post_type;
+    String post_id, post_type;
     NewsListModel post;
 
-    TextView txt_title,txt_date,txt_like_count;
+    TextView txt_title, txt_date, txt_like_count;
     ImageView img_full;
     WebView web_description;
 
@@ -58,8 +58,8 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
         Intent intent = getIntent();
         refresh();
         loading(true);
-        post_id= intent.getExtras().getString("post_id");
-        post_type= intent.getExtras().getString("post_type");
+        post_id = intent.getExtras().getString("post_id");
+        post_type = intent.getExtras().getString("post_type");
 
 
         rel_container = (RelativeLayout) findViewById(R.id.rel_container);
@@ -69,7 +69,7 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
         txt_like_count = (TextView) findViewById(R.id.txt_like_count);
         img_full = (ImageView) findViewById(R.id.img_full);
         web_description = (WebView) findViewById(R.id.web_description);
-        if(!post_type.equals("page")) {
+        if (!post_type.equals("page")) {
             post = (NewsListModel) getIntent().getSerializableExtra(EXTRA_OBJC);
             displayApiResult(post);
         }
@@ -81,10 +81,12 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int item_id = item.getItemId();
         if (item_id == R.id.action_settings) {
-            onBackPressed();
+            Intent intent = new Intent(ActivityPostTypeDetail.this, Seek.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -116,10 +118,9 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
     }
 
 
-
     public void fetchData() {
-        Log.i("dtat",post_id+"="+post_type);
-        Call<NewsListModel> noticeList = RetrofitAPI.getService().getNEEFEJDetail(post_type,post_id);
+        Log.i("dtat", post_id + "=" + post_type);
+        Call<NewsListModel> noticeList = RetrofitAPI.getService().getNEEFEJDetail(post_type, post_id);
         noticeList.enqueue(new Callback<NewsListModel>() {
             @Override
             public void onResponse(Call<NewsListModel> call, Response<NewsListModel> response) {
@@ -144,16 +145,17 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
         });
 
     }
+
     private void displayApiResult(NewsListModel posts) {
         txt_title.setText(posts.getPostTitle());
         txt_date.setText(posts.getPostDate());
 
 
-        txt_like_count.setText(""+posts.getLikeCount());
-        if(posts.getLikeCount()==null){
+        txt_like_count.setText("" + posts.getLikeCount());
+        if (posts.getLikeCount() == null) {
             txt_like_count.setText("");
         }
-        web_description.loadData(posts.getPostExcerpt(),"text/html; charset=utf-8","utf-8");
+        web_description.loadData(posts.getPostExcerpt(), "text/html; charset=utf-8", "utf-8");
         Glide.with(getApplicationContext()).load(posts.getImageId()).into(img_full);
     }
 
@@ -163,8 +165,8 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
         txt_date.setText(posts.getPostDate());
 
 
-        txt_like_count.setText(""+posts.getLikeCount());
-        if(posts.getLikeCount().equals("null")){
+        txt_like_count.setText("" + posts.getLikeCount());
+        if (posts.getLikeCount().equals("null")) {
             txt_like_count.setText("");
         }
 
@@ -196,6 +198,7 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
             lyt_no_item.setVisibility(View.GONE);
         }
     }
+
     public static void directLinkToBrowser(Activity activity, String url) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
@@ -223,22 +226,21 @@ public class ActivityPostTypeDetail extends AppCompatActivity {
         act.startActivity(Intent.createChooser(sharingIntent, "Share Using"));
     }
 
-    public void   loading(boolean show){
-        spinner = (ProgressBar)findViewById(R.id.progressBar2);
+    public void loading(boolean show) {
+        spinner = (ProgressBar) findViewById(R.id.progressBar2);
         // spinner.setVisibility(View.GONE);
 
-        if(show){
+        if (show) {
             spinner.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             spinner.setVisibility(View.GONE);
         }
         //b1=(Button)findViewById(R.id.button);
 
 
-
-
     }
-    public void refresh(){
+
+    public void refresh() {
         swipe_refresh_layout = findViewById(R.id.swipe_refresh_layout);
         swipe_refresh_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

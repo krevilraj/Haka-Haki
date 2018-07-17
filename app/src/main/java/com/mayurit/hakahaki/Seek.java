@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.mayurit.hakahaki.R;
 
-public class Seek extends Activity {
+public class Seek extends AppCompatActivity {
 
     private SeekBar volumeSeekbar  = null;
     private AudioManager audioManager = null;
@@ -21,8 +22,10 @@ public class Seek extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tester);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        setTitle(getString(R.string.setting));
         initControls();
     }
 

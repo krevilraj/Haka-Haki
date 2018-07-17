@@ -16,6 +16,7 @@ import com.mayurit.hakahaki.Helpers.RetrofitAPI;
 import com.mayurit.hakahaki.R;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,8 @@ public class Videoplay extends YouTubeBaseActivity implements YouTubePlayer.OnIn
     String post_id;
     VideoModel post;
     TextView vid_title1, expandableTextView_description, vid_date;
+    Button share_video_list;
+    String post_url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,14 @@ public class Videoplay extends YouTubeBaseActivity implements YouTubePlayer.OnIn
         Intent intent = getIntent();
         post = (VideoModel) getIntent().getSerializableExtra(EXTRA_OBJC);
         displayResult(post);
+        post_url = post.getPost_url();
+        share_video_list = findViewById(R.id.share_video_list);
+        share_video_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                methodShare(Videoplay.this,post);
+            }
+        });
 
         netCheck();
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
@@ -167,6 +178,22 @@ public class Videoplay extends YouTubeBaseActivity implements YouTubePlayer.OnIn
         } catch (Exception e) {
             Toast.makeText(activity, "Ops, Cannot open url", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public  void methodShare(Activity act, VideoModel p) {
+        Uri uri = Uri.parse(p.getImageId());
+
+        // string to share
+        StringBuilder sb = new StringBuilder();
+        sb.append("Source : " + post_url + "");
+
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, act.getString(R.string.app_name));
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, sb.toString());
+        //sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        act.startActivity(Intent.createChooser(sharingIntent, "Share Using"));
     }
 }
 

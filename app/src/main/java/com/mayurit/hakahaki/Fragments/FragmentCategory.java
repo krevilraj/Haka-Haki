@@ -24,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mayurit.hakahaki.ActivityPostTypeDetail;
 import com.mayurit.hakahaki.Adapters.CategoryAdapter;
 import com.mayurit.hakahaki.CategoryDetail;
 import com.mayurit.hakahaki.Helpers.Constant;
@@ -33,6 +34,7 @@ import com.mayurit.hakahaki.Helpers.RetrofitAPI;
 import com.mayurit.hakahaki.MainActivity;
 import com.mayurit.hakahaki.Model.CategoryModel;
 import com.mayurit.hakahaki.R;
+import com.mayurit.hakahaki.Seek;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,6 +108,8 @@ public class FragmentCategory extends Fragment {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(getActivity(), Seek.class);
+            startActivity(intent);
             return true;
         }
 
